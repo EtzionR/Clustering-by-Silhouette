@@ -37,11 +37,12 @@ def silhouette_clustering(data, typ='kmeans', org=2, lim=20):
     """
 
     memory = {'size': data.count()[0]}
-    grades = {}
+    scores = {}
     cluster= CLUSTERING[typ.lower()]
     for i in range(org, lim+1):
         lable = cluster(data, i)
-        grade = adapt_silhouette(data, lable, memory)
-        grades[grade] = lable
-        print(f'cluster kind: {typ},   input value = {i},   silhouette = {round(100*grade,1)}%')
-    return grades[max(grades.keys())]
+        silho = adapt_silhouette(data, lable, memory)
+        scores[silho] = lable
+        print(f'cluster kind: {typ},   input value = {i},   silhouette = {round(100*silho,1)}%')
+    return scores[max(scores.keys())]
+
