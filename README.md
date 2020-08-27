@@ -1,4 +1,28 @@
-# Clustering_by_Silhouette
-create the best clustering by the measure of Silhouette score
+## Clustering_by_Silhouette
+create the best clustering by the measure of Silhouette score automatically.
+
+## introduction
+We cannot know always which parameter value will give us the best clustering result. Many times we do not have enough previous knowledge on the data and the subject we are researching, so we do not know which parameter to choose. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code **clustering_by_silhouette** created.
+
+The code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the **Silhouette Score**. At the end of the process, the code returns only the clustering labels with the highest silhouette result.
+
+The code uses three different types of clustering algorithms (of course other types can be adapted to it):
+
+**KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the dataframe must be divided.
+
+**MeanShift**: For this function, the code enters different values for the **bandwidth** parameter. this parameter determines the area scale size for mean calculation.The values entered reach until 0.5 value.
+
+**HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a cluster.
+
+All these functions are stored in the **CLUSTERING** dictionary which returns the appropriate function according to input key.
+
+The outputs of those clustering functions are inserted into a adjusted **silhouette** function. First, the data is filtered so that a silhouette value is not calculated based on rows that have not been defined as part of any cluster. Such entities are formed as part of the output from **HDBSCAN** algorithm and their label is marked as: **-1**.
+
+In addition, the adjustments made to the silhouette function deal with the familiar silhouette **MemoryError**. This error is caused by an exאtensive amount of samples on which the algorithm is required to run. In order to deal with this error, the number of samples on them must be reduced using the **sample_size** parameter. However, reducing the samples number will result less-accurate results (since the results are not based on all the data). Therefore, when we get MemoryError, the code will reduce the sample_size by 5% of its previous quantity. this method continue in l**loop**, until the appropriate value that allow the silhouette return answer. The new sample_size will be saved, so basically once the corresponding value is found, no further adjustments will be required.
+
+The following graph shows the adjusted sample_size at each step of the loop:
+![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size.png)
+
+Application of the code can be seen in the file **implementation.ipynb**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs. The visualization code written as part of another project. Full details and documentation can be seen [here](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
 
 ![gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/example.gif)
