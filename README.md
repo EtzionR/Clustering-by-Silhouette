@@ -1,4 +1,4 @@
-## Clustering_by_Silhouette
+## Clustering-by-Silhouette
 create the best clustering by the measure of Silhouette score automatically.
 
 ## introduction
@@ -41,6 +41,7 @@ The code uses the following libraries in Python:
 An application of the code is attached to this page under the name: 
 
 [**implementation.ipynb**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation.ipynb)
+
 the examples outputs are also attached here.
 
 
