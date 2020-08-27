@@ -8,11 +8,11 @@ The code runs on a specific number range and each of them is entered into the cl
 
 The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
-**KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the dataframe must be divided.
+   **KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the          dataframe must be divided.
 
-**MeanShift**: For this function, the code enters different values for the **bandwidth** parameter. this parameter determines the area scale size for mean calculation.The values entered reach until 0.5 value.
+   **MeanShift**: For this function, the code enters different values for the **bandwidth** parameter. this parameter determines the area scale size for mean calculation.The        values entered reach until 0.5 value.
 
-**HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a cluster.
+   **HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a      cluster.
 
 All these functions are stored in the **CLUSTERING** dictionary which returns the appropriate function according to input key.
 
