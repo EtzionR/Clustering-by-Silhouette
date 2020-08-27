@@ -18,7 +18,7 @@ All these functions are stored in the **CLUSTERING** dictionary which returns th
 
 The outputs of those clustering functions are inserted into a adjusted **silhouette** function. First, the data is filtered so that a silhouette value is not calculated based on rows that have not been defined as part of any cluster. Such entities are formed as part of the output from **HDBSCAN** algorithm and their label is marked as: **-1**.
 
-In addition, the adjustments made to the silhouette function deal with the familiar silhouette **MemoryError**. This error is caused by an exאtensive amount of samples on which the algorithm is required to run. In order to deal with this error, the number of samples on them must be reduced using the **sample_size** parameter. However, reducing the samples number will result less-accurate results (since the results are not based on all the data). Therefore, when we get MemoryError, the code will reduce the sample_size by 5% of its previous quantity. this method continue in l**loop**, until the appropriate value that allow the silhouette return answer. The new sample_size will be saved, so basically once the corresponding value is found, no further adjustments will be required.
+In addition, the adjustments made to the silhouette function deal with the familiar silhouette **MemoryError**. This error is caused by an exאtensive amount of samples on which the algorithm is required to run. In order to deal with this error, the number of samples on them must be reduced using the **sample_size** parameter. However, reducing the samples number will result less-accurate results (since the results are not based on all the data). Therefore, when we get MemoryError, the code will reduce the sample_size by 5% of its previous quantity. this method continue in **loop**, until the appropriate value that allow the silhouette return answer. The new sample_size will be saved, so basically once the corresponding value is found, no further adjustments will be required.
 
 The following graph shows the adjusted sample_size at each step of the loop:
 ![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size.png)
@@ -26,3 +26,50 @@ The following graph shows the adjusted sample_size at each step of the loop:
 Application of the code can be seen in the file **implementation.ipynb**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs. The visualization code written as part of another project. Full details and documentation can be seen [here](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
 
 ![gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/example.gif)
+
+## libraries
+The code uses the following libraries in Python:
+
+**sklearn**
+
+**hdbscan**
+
+**pandas**
+
+
+## application
+An application of the code is attached to this page under the name: 
+
+[**implementation.ipynb**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation.ipynb)
+the examples outputs are also attached here.
+
+
+## example for using the code
+To use this code, you just need to import it as follows:
+``` sh
+# import
+from clustering_by_silhouette import silhouette_clustering
+import pandas as pd
+
+# define variables
+data= pd.read_csv(r'path\data.csv')  
+typ = 'hdbscan'
+org = 4 
+lim = 8 
+
+# application
+data['labels'] = silhouette_clustering(data, typ, org, lim)
+```
+
+When the variables displayed are:
+
+**data:** pandas dataframe that you want to perform clustering on all its columns
+
+**typ:** the clustering type (default: 'kmeans')
+
+**org:** bottom value to input the clustering function (default: 2)
+
+**lim:** upper value to input the clustering function (default: 20)
+
+
+
