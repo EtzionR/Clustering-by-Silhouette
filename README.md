@@ -2,7 +2,7 @@
 create the best clustering by the measure of Silhouette score automatically.
 
 ## introduction
-We cannot know always which parameter value will give us the best clustering result. Many times we do not have enough previous knowledge on the data and the subject we are researching, so we do not know which parameter to choose. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code **clustering_by_silhouette** created.
+We cannot know always which parameter value will give us the best clustering result. Many times we do not have enough previous knowledge on the data and the subject we are researching, so we do not know which parameter to choose. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py) created.
 
 The code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the **Silhouette Score**. At the end of the process, the code returns only the clustering labels with the highest silhouette result.
 
