@@ -46,3 +46,5 @@ def silhouette_clustering(data, typ='kmeans', org=2, lim=20):
         print(f'cluster kind: {typ},   input value = {i},   silhouette = {round(100*silho,1)}%')
     return scores[max(scores.keys())]
 
+  
+  
