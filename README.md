@@ -40,7 +40,7 @@ The code uses the following libraries in Python:
 ## application
 An application of the code is attached to this page under the name: 
 
-[**implementation.ipynb**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation.ipynb)
+[**implementation**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation_results.pdf)
 
 the examples outputs are also attached here.
 
