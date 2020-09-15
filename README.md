@@ -27,7 +27,7 @@ In addition, the adjustments made to the silhouette function deal with the famil
 The following graph shows the adjusted sample_size at each step of the loop:
 ![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size_.png)
 
-Application of the code can be seen in the file **implementation.ipynb**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs **GIF**. The visualization code written as part of another project. Full details and documentation can be seen here: [**create-3d-graph-gif**](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
+Application of the code can be seen in the file **implementation_results.pdf**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs **GIF**. The visualization code written as part of another project. Full details and documentation can be seen here: [**create-3d-graph-gif**](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
 
 ![gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/example.gif)
 
