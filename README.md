@@ -77,6 +77,6 @@ When the variables displayed are:
 **lim:** upper value to input the clustering function (default: 20)
 
 
-# License
+## License
 MIT © [Etzion Harari](https://github.com/EtzionData)
 
