@@ -10,11 +10,11 @@ Entering different parameters into the clustering function probabliy result us g
 
 By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can one automatically determine that K = 6 result the best outcome?To answer this question we can use **silhouette score**. As you can see, each subplot has a silhouette score: The closer the score is to 100%, the better the clustering function performe the separation into clusters.
 
-So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the new example, different input values to the clustering function return different silhouette score:
+So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
 
 ![score](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/silhouette_score_value_example.png)
 
-This example (based on the **Kmeans** algorithm) shows the differences exist between the different results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=5** for this specific example. This is why we choose to return only the lable results for k=5. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
+This example (based on the **Kmeans** algorithm) shows the differences exist between the different results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to return only the lable results for k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
 
 The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
