@@ -4,6 +4,10 @@ create the best clustering by the measure of Silhouette score automatically.
 ## introduction
 We cannot know always which parameter value will give us the best clustering result. Many times we do not have enough previous knowledge on the data and the subject we are researching, so we do not know which parameter to choose. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py) created.
 
+Entering different parameters into the clustering function probabliy result us get different results. For example, we will use Kmeans on [**data_3.xlsx**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Example/data_3.xlsx) dataset, so each time we set a different K value. As you can see, we get different results for each input:
+
+![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine.png)
+
 The code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the **Silhouette Score**. as you can see in the example, different input values to the clustering function return different silhouette score:
 
 ![score](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/silhouette_score_example.png)
