@@ -6,7 +6,7 @@ We cannot know always which parameter value will give us the best clustering res
 
 Entering different parameters into the clustering function probabliy result us get different results. For example, we will use Kmeans on [**data_3.xlsx**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Example/data_3.xlsx) dataset, so each time we set a different K value. As you can see, we get different results for each input:
 
-![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine.png)
+![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine_.png)
 
 By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can one automatically determine that K = 6 result the best outcome?To answer this question we can use **silhouette score**. As you can see, each subplot has a silhouette score: The closer the score is to 100%, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 66.2%!
 
