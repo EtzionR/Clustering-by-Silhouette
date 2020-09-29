@@ -31,7 +31,8 @@ The outputs of those clustering functions are inserted into a adjusted **silhoue
 In addition, the adjustments made to the silhouette function deal with the familiar silhouette **MemoryError**. This error is caused by an extensive amount of samples on which the algorithm is required to run. In order to deal with this error, the number of samples on them must be reduced using the **sample_size** parameter. However, reducing the samples number will result less-accurate results (since the results are not based on all the data). Therefore, when we get MemoryError, the code will reduce the sample_size by 5% of its previous quantity. this method continue in **loop**, until the appropriate value that allow the silhouette return answer. The new sample_size will be saved, so basically once the corresponding value is found, no further adjustments will be required.
 
 The following graph shows the adjusted sample_size at each step of the loop:
-![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size_.png)
+
+![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size.png)
 
 Application of the code can be seen in the file **implementation_results.pdf**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs **GIF**. The visualization code written as part of another project. Full details and documentation can be seen here: [**create-3d-graph-gif**](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
 
