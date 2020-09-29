@@ -8,7 +8,7 @@ Entering different parameters into the clustering function probabliy result us g
 
 ![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine.png)
 
-By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can one automatically determine that K = 6 result the best outcome?To answer this question we can use **silhouette score**. As you can see, each subplot has a silhouette score: The closer the score is to 100%, the better the clustering function performe the separation into clusters.
+By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can one automatically determine that K = 6 result the best outcome?To answer this question we can use **silhouette score**. As you can see, each subplot has a silhouette score: The closer the score is to 100%, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 66.2%!
 
 So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
 
