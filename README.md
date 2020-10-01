@@ -24,9 +24,11 @@ The code uses three different types of clustering algorithms (of course other ty
 
 - **HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a cluster.
 
-All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key.
+All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found for them by [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py):
 
-The outputs of those clustering functions are inserted into a adjusted **silhouette** function. First, the data is filtered so that a silhouette value is not calculated based on rows that have not been defined as part of any cluster. Such entities are formed as part of the output from **HDBSCAN** algorithm and their label is marked as: **-1**.
+![functions](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/functions.png)
+
+The outputs of each clustering functions are inserted into a **adjusted silhouette function**. First, the data is filtered so that a silhouette value is not calculated based on rows that have not been defined as part of any cluster. Such entities are formed as part of the output from **HDBSCAN** algorithm and their label is marked as: **-1**.
 
 In addition, the adjustments made to the silhouette function deal with the familiar silhouette **MemoryError**. This error is caused by an extensive amount of samples on which the algorithm is required to run. In order to deal with this error, the number of samples on them must be reduced using the **sample_size** parameter. However, reducing the samples number will result less-accurate results (since the results are not based on all the data). Therefore, when we get MemoryError, the code will reduce the sample_size by 5% of its previous quantity. this method continue in **loop**, until the appropriate value that allow the silhouette return answer. The new sample_size will be saved, so basically once the corresponding value is found, no further adjustments will be required.
 
