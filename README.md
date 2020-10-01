@@ -24,7 +24,7 @@ The code uses three different types of clustering algorithms (of course other ty
 
 - **HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a cluster.
 
-All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found for them by [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py):
+All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found by [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py):
 
 ![functions](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/functions.png)
 
