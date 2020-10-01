@@ -6,7 +6,7 @@ from hdbscan import HDBSCAN
 # dictionary of clustering functions:
 CLUSTERING = {'kmeans' : lambda df, k: KMeans(n_clusters = k).fit(df).labels_,
              'hdbscan' : lambda df, s: HDBSCAN(min_cluster_size = s).fit(df).labels_,
-            'meanshift': lambda df, q: MeanShift(bandwidth=0.025*min(q,20)).fit(df).labels_}
+            'meanshift': lambda df, q: MeanShift(bandwidth=0.025*min(q,40)).fit(df).labels_}
 
 
 def adapt_silhouette(data, labels, memory):
