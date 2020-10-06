@@ -6,7 +6,7 @@ from hdbscan import HDBSCAN
 # dictionary of clustering functions:
 CLUSTERING = {'kmeans' : lambda df, k: KMeans(n_clusters = k).fit(df).labels_,
              'hdbscan' : lambda df, s: HDBSCAN(min_cluster_size = s).fit(df).labels_,
-            'meanshift': lambda df, q: MeanShift(bandwidth=0.025*min(q,40)).fit(df).labels_}
+            'meanshift': lambda df, q: MeanShift(bandwidth=0.025*min(q,50)).fit(df).labels_}
 
 
 def adapt_silhouette(data, labels, memory):
@@ -18,15 +18,16 @@ def adapt_silhouette(data, labels, memory):
     :return: the dataframe silhouette score for the given labels
     """
 
-    data, labels = data[labels>-1], labels[labels>-1]
+    data, labels, length = data[labels>-1], labels[labels>-1], len(labels)
+    if data.shape[0]==0: return-1
     while True:
         try:
-            return silhouette_score(data, labels, sample_size=memory['size'])
+            return silhouette_score(data, labels, sample_size=memory['size'])*(len(labels)/length)
         except:
             memory['size'] = int(memory['size']*0.95)
 
 
-def silhouette_clustering(data, typ='kmeans', org=2, lim=20):
+def silhouette_clustering(data, typ='kmeans', org=2, lim=20, stp=1):
     """
     calculate the best clustering labels, by silhouette score
     :param data: given dataframe
@@ -39,12 +40,9 @@ def silhouette_clustering(data, typ='kmeans', org=2, lim=20):
     memory = {'size': data.count()[0]}
     scores = {}
     cluster= CLUSTERING[typ.lower()]
-    for i in range(org, lim+1):
+    for i in range(org, lim+1,stp):
         lable = cluster(data, i)
         silho = adapt_silhouette(data, lable, memory)
         scores[silho] = lable
         print(f'cluster kind: {typ},   input value = {i},   silhouette = {round(100*silho,1)}%')
     return scores[max(scores.keys())]
-
-  
-  
