@@ -36,6 +36,10 @@ The following graph shows the adjusted sample_size at each step of the loop:
 
 ![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size.png)
 
+Another option that exists in the code is to perform **steps** in the run over the defined number range. This option runs based on the "step" parameter of the "range" function. This option is significant when there small changes for a close number range. An example for this option can be seen in the following example (based on the dataset of [HDBSCAN documentation](https://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html#hdbscan)):
+
+![stp_gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/stp%3D2.gif)
+
 Application of the code can be seen in the file **implementation_results.pdf**. The implementation performed **3D visualization** based on the results, using a code to create three-dimensional outputs **GIF**. The visualization code written as part of another project. Full details and documentation can be seen here: [**create-3d-graph-gif**](https://github.com/EtzionData/create-3d-graph-gif). Example of one of the outputs:
 
 ![gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/example.gif)
