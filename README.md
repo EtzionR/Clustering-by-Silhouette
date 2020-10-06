@@ -25,7 +25,8 @@ The code uses three different types of clustering algorithms (of course other ty
 
 All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found by [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py):
 
-![functions](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/functions.png)
+![functions](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/functions_.png)
+
 The outputs of each clustering functions are inserted into a **adjusted silhouette function**. First, the data is filtered so that a silhouette value is not calculated based on rows that have not been defined as part of any cluster. Such entities are formed as part of the output from **HDBSCAN** algorithm and their label is marked as: **-1**. Also, for such datasets, the silhouette score calculated relativity to rate of **label = -1** records. That is, if **N** is the number of records in the original dataset, and **M** is the number of records after filtering label = -1, then the silhouette score will be:
 **silhouette ∙ (M/N)**
 
