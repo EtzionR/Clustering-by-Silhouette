@@ -79,7 +79,7 @@ lim = 8
 stp = 2
 
 # application
-data['labels'] = silhouette_clustering(data, typ, org, lim)
+data['labels'] = silhouette_clustering(data, typ, org, lim, stp)
 ```
 
 When the variables displayed are:
