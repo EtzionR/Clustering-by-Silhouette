@@ -37,7 +37,7 @@ def silhouette_clustering(data, typ='kmeans', org=2, lim=20, stp=1):
     :return: the best clustering label by silhouette score
     """
 
-    memory = {'size': data.count()[0]}
+    memory = {'size': data.shape[0]}
     scores = {}
     cluster= CLUSTERING[typ.lower()]
     for i in range(org, lim+1,stp):
