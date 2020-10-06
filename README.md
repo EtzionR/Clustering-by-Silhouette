@@ -76,6 +76,7 @@ data= pd.read_csv(r'path\data.csv')
 typ = 'hdbscan'
 org = 4 
 lim = 8 
+stp = 2
 
 # application
 data['labels'] = silhouette_clustering(data, typ, org, lim)
