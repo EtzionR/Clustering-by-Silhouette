@@ -92,7 +92,7 @@ When the variables displayed are:
 
 **lim:** upper value to input the clustering function (default: 20)
 
-**stp:** number of steps from **"org"** to **"lim"** (default: 1)
+**stp:** define the gap between each step between **"org"** to **"lim"** (default: 1)
 
 
 ## License
