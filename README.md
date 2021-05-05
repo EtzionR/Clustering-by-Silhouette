@@ -7,13 +7,13 @@ We cannot know always which parameter value will give us the best clustering res
 Entering different parameters into the clustering function probabliy result us get different outcomes. For example, we will use Kmeans on [**data_3.xlsx**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Example/data_3.xlsx) dataset, so each time we set a different K value. As you can see, we get different results for each input:
 
 ![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine_clusters.png)
-By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can one automatically determine that K = 6 result the best outcome?To answer this question we can use **silhouette score**. As you can see, each subplot has a silhouette score: The closer the score is to 100%, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
+By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can we automatically determine that K = 6 gives the best outcome? To answer this question we can use **silhouette score**. silhouette method can gives us some assessment to the quality of the clustering output. As you can see, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
 So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
 
 ![score](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/silhouette_score_example.png)
 
-This example (based on the **Kmeans** algorithm) shows the differences exist between the different results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to return only the lable results for k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
+This example (based on the **Kmeans** algorithm) shows the differences scores between different clustering results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to input k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
 
 The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
