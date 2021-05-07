@@ -35,7 +35,7 @@ So, to determine the best input value, the code runs on a specific number range 
 
 This example (based on the **Kmeans** algorithm) shows the differences scores between different clustering results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to input k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
 
-The code based on this logic demonstrated in the case we have saw. The code uses three different types of clustering algorithms (of course other types can be adapted to it):
+The [clustering_by_silhouette.py](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py) code based on this logic demonstrated in the case we have saw. The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
 - **KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the dataframe must be divided.
 
