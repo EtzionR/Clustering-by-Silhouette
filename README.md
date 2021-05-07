@@ -7,17 +7,21 @@ We cannot know always which parameter value will give us the best clustering res
 Entering different parameters into the clustering function probabliy result us get different outcomes. For example, we will use Kmeans on [**data_3.xlsx**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Example/data_3.xlsx) dataset, so each time we set a different K value. As you can see, we get different results for each input:
 
 ![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine_clusters.png)
-By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can we automatically determine that K = 6 gives the best outcome? To answer this question we can use **silhouette score**. silhouette method can gives us some assessment to the quality of the clustering output. 
+By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can we automatically determine that K = 6 gives the best outcome? To answer this question we can use **silhouette score**. the Silhouette method can gives us some assessment to the quality of the clustering output. The score calculate S(xi) score for every row in the given dataframe as follow: 
 
 <img src="https://render.githubusercontent.com/render/math?math=S({x_{i}}) = \frac{B({x_{i}})-A({x_{i}})}{\max(B({x_{i}}),A({x_{i}}))}">
 
-Where A(xi):
+Where:
 
 <img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \notin x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i}-Cluster}}">
 
 <img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \in x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}-Cluster}}">
 
-<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{(x_{i}-x_{j})^{2}} ">
+<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{(x_{i}-x_{j})^{2}}">
+
+after this calculation, we can get the silhouette score: 
+
+<img src="https://render.githubusercontent.com/render/math?math=Silhouette = \overline{S} = \sum_{i=1}^{n}  \frac{S(x_{i})^{}}{n}">
 
 As you can see in the 3x3 plot, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
