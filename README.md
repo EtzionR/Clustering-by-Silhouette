@@ -17,7 +17,7 @@ Where A(xi):
 
 <img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \in x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}-Cluster}}">
 
-
+<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{(x_{i}-x_{j})^{2}} ">
 
 As you can see in the 3x3 plot, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
