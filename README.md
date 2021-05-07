@@ -23,11 +23,11 @@ after this calculation, we can get the silhouette score:
 
 <img src="https://render.githubusercontent.com/render/math?math=Silhouette = \overline{S} = \sum_{i=1}^{n}  \frac{S(x_{i})^{}}{n}">
 
-You can see demonstration of silhouette score calculation on this simple 2d example:
+In fact, the Silhouette is calculated based on each record and its distance to the other records in the same cluster and the distance of that record to the remaining records. The output of the Silhouette can move between 1 (which mean good clustering) to -1 (which mean bad clustering). You can see demonstration of silhouette score calculation on this simple 2d example:
 
 ![silhouette_dem](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/Pictures/silho_dem.gif)
 
-As you can see in the 3x3 plot, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
+So, we can use the Silhouette to find the best K for split the data. As we can see in the 3x3 plot, each subplot **already** has a silhouette score: As we already see, the closer the score is to 1, the better the function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
 So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
 
@@ -35,7 +35,7 @@ So, to determine the best input value, the code runs on a specific number range 
 
 This example (based on the **Kmeans** algorithm) shows the differences scores between different clustering results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to input k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
 
-The code uses three different types of clustering algorithms (of course other types can be adapted to it):
+The code based on this logic demonstrated in the case we have saw. The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
 - **KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the dataframe must be divided.
 
