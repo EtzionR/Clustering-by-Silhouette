@@ -13,11 +13,11 @@ By simply looking at the scatter plot, it can be seen that there are **six clust
 
 Where A(xi):
 
-<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \in x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}-Cluster}}">
+<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \notin x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i}-Cluster}}">
 
-and B(xi):
+<img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \in x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}-Cluster}}">
 
-<img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \notin x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i}-Cluster}}">
+
 
 As you can see in the 3x3 plot, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
