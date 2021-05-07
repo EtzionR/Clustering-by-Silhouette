@@ -11,6 +11,12 @@ By simply looking at the scatter plot, it can be seen that there are **six clust
 
 <img src="https://render.githubusercontent.com/render/math?math=S({x_{i}}) = \frac{B({x_{i}})-A({x_{i}})}{\max(B({x_{i}}),A({x_{i}}))}">
 
+Where A(xi):
+
+<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \in Cluster-of-x_{i}}^{} \frac{dist(x_{i},x_{j})}{n_{Cluster-of-x_{i}}}">
+
+
+
 As you can see in the 3x3 plot, each subplot has a silhouette score: The closer the score is to 1, the better the clustering function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
 So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
