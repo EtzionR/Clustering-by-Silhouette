@@ -56,7 +56,7 @@ The following graph shows the adjusted sample_size at each step of the loop:
 
 ![graph](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/sample_size.png)
 
-Another option that exists in the code is to perform **steps** in the run over the defined number range. This simple option runs based on the "step" parameter of the "range" function. This option is significant when there small changes for a close number range. To define number of steps, you can use the **"stp"** parameter. Illustration for this option can be seen in the following example of **stp=2** (based on the dataset of [HDBSCAN documentation](https://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html#hdbscan)):
+Another option that exists in the code is to perform **steps** in the run over the defined number range. This simple option runs based on the "step" parameter of the "range" function. This option is significant when there small changes for a close number range. To define number of steps, you can use the **"stp"** parameter. Illustration for this option can be seen in the following example of **stp=2** (based on the dataset of [**HDBSCAN documentation**](https://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html#hdbscan)):
 
 ![stp_gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/set_bar_2.gif)
 
