@@ -13,9 +13,9 @@ By simply looking at the scatter plot, it can be seen that there are **six clust
 
 Where:
 
-<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \in x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i}-Cluster}-1}">
+<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \in x_{i}_Cluster}^{} \frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i}_Cluster}-1}">
 
-<img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \notin x_{i}-Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}-Cluster}}">
+<img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \notin x_{i}_Cluster}^{} \frac{dist(x_{i},x_{j})}{n_{\notin x_{i}_Cluster}}">
 
 <img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{(x_{i}-x_{j})^{2}}">
 
