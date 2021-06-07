@@ -2,7 +2,7 @@
 create the best clustering by the measure of Silhouette Score automatically.
 
 ## Overview
-Clustering is one of the most important methods in the fielf of **Machine Learning**. However, to proccess the data, clustering algorithms require specific parameter definition. Thus parameters effect the quality of the clustering results, and the user mostly dont have idea which choosen parameter gives the optimal output. Without enough previous knowledge on the data we are researching, we do not know which parameter to choose. In the cases of data with 2 or 3 dimensions, we can review manualy the results, and determine whether the clustering successful. But for a dataset with more dimensions, it become much more complex procedure. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py) created.
+Clustering is one of the most important methods in the fielf of **Machine Learning**. However, to proccess the data, clustering algorithms require specific parameter definition. Thus parameters effect the quality of the clustering results, and the user mostly dont have idea which choosen parameter gives the optimal output. Without enough previous knowledge on the data we are researching, we do not know which parameter to choose. In the cases of data with 2 or 3 dimensions, we can review manualy the results, and determine whether the clustering successful. But for a dataset with more dimensions, it become much more complex procedure. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code [**scluster.py**](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/scluster.py) created.
 
 Entering different parameters into the clustering function probabliy result us get different outcomes. For example, we will use Kmeans on [**data_3.xlsx**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Example/data_3.xlsx) dataset, so each time we set a different K value. As you can see, we get different results for each input:
 
@@ -35,7 +35,7 @@ So, to determine the best input value, the code runs on a specific number range 
 
 This example (based on the **Kmeans** algorithm) shows the differences scores between different clustering results. Every result based on a different cluster number value. It can be seen that we get the best score when **k=6** for this specific example. This is why we choose to input k=6. Similarly, the code at the end of the process, returns only the clustering labels with the highest silhouette result. 
 
-The [clustering_by_silhouette.py](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py) code based on this logic demonstrated in the case we have saw. The code uses three different types of clustering algorithms (of course other types can be adapted to it):
+The [**scluster.py**](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/scluster.py) code based on this logic demonstrated in the case we have saw. The code uses three different types of clustering algorithms (of course other types can be adapted to it):
 
 - **KMeans**: This function enters the code at each step of loop other **n_clusters value**. According to this **K** value, determines the number of clusters to which the dataframe must be divided.
 
@@ -43,7 +43,7 @@ The [clustering_by_silhouette.py](https://github.com/EtzionR/Clustering-by-Silho
 
 - **HDBSCAN**: For this function, the code enters the values for the **min_cluster_size** parameter.This parameter determines the samples quantity that should considered as a cluster.
 
-All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found by [**clustering_by_silhouette.py**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/clustering_by_silhouette.py):
+All these functions are stored in the **"CLUSTERING"** dictionary which returns the appropriate function according to input key. Each of the functions performs the clustering process differently, so the values that the code enters also result in different results from each other. An example can be seen from the outputs that the functions genereted, based on the optimal values found by [**scluster.py**](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/scluster.py):
 
 ![functions](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/functions.png)
 
@@ -64,6 +64,8 @@ Application of the code can be seen in the file **implementation_results.pdf**. 
 
 ![gif](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/example.gif)
 
+old version of the code available here: [**clustering_by_silhouette**](https://github.com/EtzionR/Clustering-by-Silhouette/tree/master/old_version)
+
 **NOTE:** Although all the graph examples in this documentation describe results for 2 or 3 dimensional cases, the code itself also **works for a multidimensional** dataset.
 
 ## Libraries
@@ -79,7 +81,7 @@ The code uses the following libraries in Python:
 ## Application
 An application of the code is attached to this page under the name: 
 
-[**implementation**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation_results.pdf)
+[**implementation**](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/implementation.pdf)
 
 the examples outputs are also attached here.
 
@@ -88,7 +90,7 @@ the examples outputs are also attached here.
 To use this code, you just need to import it as follows:
 ``` sh
 # import
-from clustering_by_silhouette import silhouette_clustering
+from scluster import Scluster
 import pandas as pd
 
 # define variables
@@ -99,7 +101,7 @@ lim = 8
 stp = 2
 
 # application
-data['labels'] = silhouette_clustering(data, typ, org, lim, stp)
+data['labels'] = SCluster(typ=typ, org=org ,lim=lim, stp=stp).fit(data).labels_
 ```
 
 When the variables displayed are:
@@ -113,6 +115,8 @@ When the variables displayed are:
 **lim:** upper value to input the clustering function (default: 20)
 
 **stp:** define the gap between each step between **"org"** to **"lim"** (default: 1)
+
+**dup:** define the multiplication factor for reduce the size of input dataframe
 
 
 ## License
