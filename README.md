@@ -116,7 +116,7 @@ When the variables displayed are:
 
 **stp:** define the gap between each step between **"org"** to **"lim"** (default: 1)
 
-**dup:** define the multiplication factor for reduce the size of input dataframe
+**dup:** define the multiplication factor for reduce the size of input dataframe (default: 0.95)
 
 
 ## License
