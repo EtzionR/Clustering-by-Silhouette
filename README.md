@@ -17,7 +17,7 @@ Where:
 
 <img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \notin x_{i} \quad Cluster}^{} (\frac{dist(x_{i},x_{j})}{n_{\notin x_{i} \quad Cluster}})">
 
-<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{(x_{i}-x_{j})^{2}}">
+<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{\sum_{(x_{i}-x_{j})^{2}}}">
 
 after this calculation, we can get the silhouette score: 
 
