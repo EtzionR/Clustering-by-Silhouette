@@ -29,7 +29,7 @@ In fact, the Silhouette is calculated based on each record and its distance to t
 
 So, we can use the Silhouette to find the best K for split the data. As we can see in the 3x3 plot, each subplot **already** has a silhouette score: As we already see, the closer the score is to 1, the better the function performe the separation into clusters. We do see that for K = 6 calculated the highest silhouette-score: 0.662!
 
-So, to determine the best input value, the code runs on a specific number range and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
+So, to determine the best input value, the code runs on a specific range of values and each of them is entered into the clustering function. Then, the code compares the different results obtained using the Silhouette Score. as you can see in the example, different input values to the clustering function return different silhouette score:
 
 ![score](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/silhouette_score_example.png)
 
