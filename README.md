@@ -90,7 +90,7 @@ the examples outputs are also attached here.
 To use this code, you just need to import it as follows:
 ``` sh
 # import
-from scluster import Scluster
+from scluster import SCluster
 import pandas as pd
 
 # define variables
