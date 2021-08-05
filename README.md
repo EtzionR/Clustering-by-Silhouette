@@ -1,5 +1,5 @@
 ## Clustering-by-Silhouette
-create the best clustering by the measure of Silhouette Score automatically.
+Create the optimal clustering by the measure of Silhouette Score automatically.
 
 ## Overview
 Clustering is one of the most important methods in the fielf of **Machine Learning**. However, to proccess the data, clustering algorithms require specific parameter definition. Thus parameters effect the quality of the clustering results, and the user mostly dont have idea which choosen parameter gives the optimal output. Without enough previous knowledge on the data we are researching, we do not know which parameter to choose. In the cases of data with 2 or 3 dimensions, we can review manualy the results, and determine whether the clustering successful. But for a dataset with more dimensions, it become much more complex procedure. This situation causes a lot of time wasted in finding the optimal value for the parameter. In order to solve this difficulty, the code [**scluster.py**](https://github.com/EtzionR/Clustering-by-Silhouette/blob/master/scluster.py) created.
