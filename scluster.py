@@ -1,3 +1,6 @@
+# Create by Etzion Harari
+# https://github.com/EtzionR
+
 # import libraries
 from sklearn.cluster import KMeans, MeanShift
 from sklearn.metrics import silhouette_score
@@ -71,3 +74,6 @@ class SCluster:
             print(f'cluster kind: {self.type}, input value = {i}, silhouette = {round(silho,2)}')
         self.labels_ = self.scores[self.max]
         return self
+
+      
+  # MIT © Etzion Harari
