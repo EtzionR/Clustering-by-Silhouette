@@ -75,5 +75,5 @@ class SCluster:
         self.labels_ = self.scores[self.max]
         return self
 
-      
-  # MIT © Etzion Harari
+# License      
+# MIT © Etzion Harari
