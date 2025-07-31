@@ -56,7 +56,7 @@ class SCluster:
             try:
                 return silhouette_score(data, labels, sample_size=self.size)*(labels.shape[0]/self.n)
             except:
-                self.size = int(self.size*self.duf)
+                self.size = int(self.size*self.dup)
 
     def fit(self,data):
         """
