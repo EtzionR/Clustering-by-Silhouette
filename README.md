@@ -13,15 +13,15 @@ $S({x_{i}}) = \frac{B({x_{i}})-A({x_{i}})}{\max(B({x_{i}}),A({x_{i}}))}$
 
 Where:
 
-<img src="https://render.githubusercontent.com/render/math?math=A(x_{i})= \sum_{j \in x_{i} \quad Cluster}^{} (\frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i} \quad Cluster}-1})">
+$A(x_{i})= \sum_{j \in x_{i} \quad Cluster}^{} (\frac{dist(x_{i},x_{j})*I(i!=j)}{n_{x_{i} \quad Cluster}-1})$
 
-<img src="https://render.githubusercontent.com/render/math?math=B(x_{i})= \sum_{j \notin x_{i} \quad Cluster}^{} (\frac{dist(x_{i},x_{j})}{n_{\notin x_{i} \quad Cluster}})">
+$B(x_{i})= \sum_{j \notin x_{i} \quad Cluster}^{} (\frac{dist(x_{i},x_{j})}{n_{\notin x_{i} \quad Cluster}})$
 
-<img src="https://render.githubusercontent.com/render/math?math=dist(x_{i},x_{j}) =  \sqrt{\sum_{(x_{i}-x_{j})^{2}}}">
+$dist(x_{i},x_{j}) =  \sqrt{\sum_{(x_{i}-x_{j})^{2}}}$
 
 after this calculation, we can get the silhouette score: 
 
-<img src="https://render.githubusercontent.com/render/math?math=Silhouette = \overline{S} = \sum_{i=1}^{n}  \frac{S(x_{i})^{}}{n}">
+$Silhouette = \overline{S} = \sum_{i=1}^{n}  \frac{S(x_{i})^{}}{n}$
 
 In fact, the Silhouette is calculated based on each record and its distance to the other records in the same cluster and the distance of that record to the remaining records. The output of the Silhouette can move between 1 (which mean good clustering) to -1 (which mean bad clustering). You can see demonstration of silhouette score calculation on this simple 2d example:
 
