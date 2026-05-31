@@ -9,7 +9,7 @@ Entering different parameters into the clustering function probabliy result us g
 ![nine](https://github.com/EtzionData/Clustering-by-Silhouette/blob/master/Pictures/nine_clusters.png)
 By simply looking at the scatter plot, it can be seen that there are **six clusters** in the dataset. But how can we automatically determine that K = 6 gives the best outcome? To answer this question we can use **silhouette score**. the Silhouette method can gives us some assessment to the quality of the clustering output. The score calculate S(xi) score for every row in the given dataframe as follow: 
 
-<img src="https://render.githubusercontent.com/render/math?math=S({x_{i}}) = \frac{B({x_{i}})-A({x_{i}})}{\max(B({x_{i}}),A({x_{i}}))}">
+$S({x_{i}}) = \frac{B({x_{i}})-A({x_{i}})}{\max(B({x_{i}}),A({x_{i}}))}$
 
 Where:
 
